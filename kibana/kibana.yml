@@ -1,0 +1,10 @@
+# Default Kibana configuration for docker target
+# 增加中文化UI的配置项，通过compose 文件的 enviroment参数传入也可以不过要注意key都要大写。
+# 官方文档 https://www.elastic.co/guide/en/kibana/current/docker.html 中有这么一段话：
+# For compatibility with container orchestration systems, these environment variables are written in all capitals, with underscores as word separators. The helper translates these names to valid Kibana setting names.
+
+server.name: kibana
+server.host: "0"
+elasticsearch.hosts: [ "http://elasticsearch:9200" ]
+monitoring.ui.container.elasticsearch.enabled: true
+i18n.locale: "zh-CN"
